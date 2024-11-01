@@ -1,166 +1,175 @@
 const sql = require("better-sqlite3");
 const db = sql("meals.db");
 
-const dummyMeals = [
+const indianMeals = [
   {
-    title: "Juicy Cheese Burger",
-    slug: "juicy-cheese-burger",
-    image: "/images/burger.jpg",
+    title: "Besan ka Ladoo",
+    slug: "besan-ka-ladoo",
+    image: "/images/besan-ladoo.png",
     summary:
-      "A mouth-watering burger with a juicy beef patty and melted cheese, served in a soft bun.",
+      "Sweet and melt-in-your-mouth Indian sweet made with gram flour, ghee, nuts, and spices.",
     instructions: `
-      1. Prepare the patty:
-         Mix 200g of ground beef with salt and pepper. Form into a patty.
+      1. Roast the gram flour (besan):
+        Dry roast besan in a pan over medium heat until golden brown and fragrant.
 
-      2. Cook the patty:
-         Heat a pan with a bit of oil. Cook the patty for 2-3 minutes each side, until browned.
+      2. Prepare the sugar syrup:
+        In a separate pan, combine sugar and water. Heat until sugar dissolves and the syrup reaches a one-string consistency.
 
-      3. Assemble the burger:
-         Toast the burger bun halves. Place lettuce and tomato on the bottom half. Add the cooked patty and top with a slice of cheese.
+      3. Combine and shape:
+        Mix the roasted besan with hot ghee, chopped nuts, and cardamom powder. Add the sugar syrup gradually and mix well.
 
-      4. Serve:
-         Complete the assembly with the top bun and serve hot.
-    `,
-    creator: "John Doe",
-    creator_email: "johndoe@example.com",
-  },
-  {
-    title: "Spicy Curry",
-    slug: "spicy-curry",
-    image: "/images/curry.jpg",
-    summary:
-      "A rich and spicy curry, infused with exotic spices and creamy coconut milk.",
-    instructions: `
-      1. Chop vegetables:
-         Cut your choice of vegetables into bite-sized pieces.
-
-      2. Sauté vegetables:
-         In a pan with oil, sauté the vegetables until they start to soften.
-
-      3. Add curry paste:
-         Stir in 2 tablespoons of curry paste and cook for another minute.
-
-      4. Simmer with coconut milk:
-         Pour in 500ml of coconut milk and bring to a simmer. Let it cook for about 15 minutes.
+      4. Shape into ladoos:
+        Form the mixture into bite-sized balls while it's still warm.
 
       5. Serve:
-         Enjoy this creamy curry with rice or bread.
+        Let the ladoos cool and solidify before serving. Enjoy as a sweet treat!
     `,
-    creator: "Max Schwarz",
-    creator_email: "max@example.com",
+    creator: "Anita Sharma",
+    creator_email: "anita.sharma@example.com",
   },
   {
-    title: "Homemade Dumplings",
-    slug: "homemade-dumplings",
-    image: "/images/dumplings.jpg",
+    title: "Chicken Malwani",
+    slug: "chicken-malwani",
+    image: "/images/chicken-malwani.png",
     summary:
-      "Tender dumplings filled with savory meat and vegetables, steamed to perfection.",
+      "Spicy and flavorful chicken dish from the Malwan region of India, known for its coconut and red chili base.",
     instructions: `
-      1. Prepare the filling:
-         Mix minced meat, shredded vegetables, and spices.
+      1. Marinate the chicken:
+        Mix chicken pieces with yogurt, ginger-garlic paste, red chili powder, turmeric, coriander powder, and other spices. Marinate for at least 30 minutes.
 
-      2. Fill the dumplings:
-         Place a spoonful of filling in the center of each dumpling wrapper. Wet the edges and fold to seal.
+      2. Cook the chicken:
+        Heat oil in a pan and fry onions until golden brown. Add the marinated chicken and cook until browned.
 
-      3. Steam the dumplings:
-         Arrange dumplings in a steamer. Steam for about 10 minutes.
+      3. Add coconut and spices:
+        Add coconut milk, water, and additional spices like garam masala and kokum. Simmer until the chicken is cooked through and the sauce thickens.
+
+      4. Garnish and serve:
+        Garnish with chopped coriander leaves and serve hot with rice or roti.
+    `,
+    creator: "Vikram Patel",
+    creator_email: "vikrampatel@example.com",
+  },
+  {
+    title: "Prawn Koliwada",
+    slug: "prawn-koliwada",
+    image: "/images/prawn-koliwada.png",
+    summary:
+      "Crispy and flavorful fried prawns marinated in a spicy coconut and gram flour batter, a popular Konkani dish.",
+    instructions: `
+      1. Clean and marinate the prawns:
+        Clean and devein the prawns. Marinate with lemon juice, ginger-garlic paste, red chili powder, turmeric, and salt.
+
+      2. Prepare the batter:
+        Mix gram flour (besan) with water to create a thick batter. Add chopped onions, green chilies, and coriander leaves.
+
+      3. Coat and fry the prawns:
+        Dip the marinated prawns into the batter and coat evenly. Deep fry in hot oil until golden brown and crispy.
 
       4. Serve:
-         Enjoy these dumplings hot, with a dipping sauce of your choice.
+        Drain excess oil and serve hot with a side of lemon wedges and chutney.
     `,
-    creator: "Emily Chen",
-    creator_email: "emilychen@example.com",
+    creator: "Aisha Khan",
+    creator_email: "aishakhan@example.com",
   },
   {
-    title: "Classic Mac n Cheese",
-    slug: "classic-mac-n-cheese",
-    image: "/images/macncheese.jpg",
+    title: "Stuffed Mushroom",
+    slug: "stuffed-mushroom",
+    image: "/images/stuffed-mushroom.png",
     summary:
-      "Creamy and cheesy macaroni, a comforting classic that's always a crowd-pleaser.",
+      "Vegetarian delight! Mushrooms filled with a flavorful mixture of vegetables, herbs, and spices.",
     instructions: `
-      1. Cook the macaroni:
-         Boil macaroni according to package instructions until al dente.
+      1. Prepare the mushroom caps:
+        Clean and remove the stems from the mushrooms. Brush with melted butter or olive oil.
 
-      2. Prepare cheese sauce:
-         In a saucepan, melt butter, add flour, and gradually whisk in milk until thickened. Stir in grated cheese until melted.
+      2. Sauté the filling:
+        Heat oil in a pan and sauté chopped onions, vegetables of your choice (e.g., peas, carrots), and spices.
 
-      3. Combine:
-         Mix the cheese sauce with the drained macaroni.
+      3. Add breadcrumbs and herbs:
+        Mix in breadcrumbs, chopped herbs like parsley, and grated cheese for a creamy texture.
 
-      4. Bake:
-         Transfer to a baking dish, top with breadcrumbs, and bake until golden.
+      4. Stuff and bake:
+        Fill the mushroom caps with the prepared mixture. Bake in a preheated oven until the mushrooms are tender and the filling is golden brown.
 
       5. Serve:
-         Serve hot, garnished with parsley if desired.
+        Enjoy these flavorful stuffed mushrooms hot as a side dish or appetizer.
     `,
-    creator: "Laura Smith",
-    creator_email: "laurasmith@example.com",
+    creator: "Ramesh Kapoor",
+    creator_email: "rameshkapoor@example.com",
   },
   {
-    title: "Authentic Pizza",
-    slug: "authentic-pizza",
-    image: "/images/pizza.jpg",
+    title: "Butter Chicken",
+    slug: "butter-chicken",
+    image: "/images/butter-chicken.jpg",
     summary:
-      "Hand-tossed pizza with a tangy tomato sauce, fresh toppings, and melted cheese.",
+      "Rich and creamy tomato-based curry with tender pieces of chicken, flavored with aromatic spices and butter.",
     instructions: `
-      1. Prepare the dough:
-         Knead pizza dough and let it rise until doubled in size.
+    1. Marinate the chicken:
+      Marinate chicken pieces with yogurt, ginger-garlic paste, red chili powder, turmeric powder, and garam masala.
 
-      2. Shape and add toppings:
-         Roll out the dough, spread tomato sauce, and add your favorite toppings and cheese.
+    2. Cook the chicken:
+      Heat oil in a pan and sear the marinated chicken pieces until golden brown.
 
-      3. Bake the pizza:
-         Bake in a preheated oven at 220°C for about 15-20 minutes.
+    3. Prepare the gravy:
+      In a separate pan, heat oil and fry onions, tomatoes, and cashews until a smooth paste forms.
 
-      4. Serve:
-         Slice hot and enjoy with a sprinkle of basil leaves.
-    `,
-    creator: "Mario Rossi",
-    creator_email: "mariorossi@example.com",
+    4. Combine and simmer:
+      Add the cooked chicken and the tomato-cashew paste to a pot. Pour in cream, butter, and water. Simmer until the sauce thickens.
+
+    5. Garnish and serve:
+      Garnish with coriander leaves and serve hot with naan or rice.
+  `,
+    creator: "Rajiv Singh",
+    creator_email: "rajivsingh@example.com",
   },
   {
-    title: "Wiener Schnitzel",
-    slug: "wiener-schnitzel",
-    image: "/images/schnitzel.jpg",
+    title: "Gulab Jamun",
+    slug: "gulab-jamun",
+    image: "/images/gulab-jamun.jpg",
     summary:
-      "Crispy, golden-brown breaded veal cutlet, a classic Austrian dish.",
+      "Soft and spongy fried milk balls soaked in a sweet, fragrant syrup, a classic Indian dessert.",
     instructions: `
-      1. Prepare the veal:
-         Pound veal cutlets to an even thickness.
+    1. Make the dough:
+      Mix milk powder, maida flour, baking powder, and a pinch of cardamom powder. Add warm milk gradually and knead into a soft dough.
 
-      2. Bread the veal:
-         Coat each cutlet in flour, dip in beaten eggs, and then in breadcrumbs.
+    2. Shape the jamuns:
+      Roll the dough into small balls and deep fry them until golden brown.
 
-      3. Fry the schnitzel:
-      Heat oil in a pan and fry each schnitzel until golden brown on both sides.
+    3. Prepare the sugar syrup:
+      In a separate pan, dissolve sugar in water and bring to a boil. Add cardamom pods and rose water for flavor.
 
-      4. Serve:
-      Serve hot with a slice of lemon and a side of potato salad or greens.
- `,
-    creator: "Franz Huber",
-    creator_email: "franzhuber@example.com",
+    4. Soak the jamuns:
+      Add the fried jamuns to the sugar syrup and let them soak for at least 2 hours.
+
+    5. Serve:
+      Serve the soaked gulab jamuns warm or chilled.
+  `,
+    creator: "Aarti Desai",
+    creator_email: "aartidesai@example.com",
   },
   {
-    title: "Fresh Tomato Salad",
-    slug: "fresh-tomato-salad",
-    image: "/images/tomato-salad.jpg",
+    title: "Paneer Butter Masala",
+    slug: "paneer-butter-masala",
+    image: "/images/paneer-butter-masala.jpg",
     summary:
-      "A light and refreshing salad with ripe tomatoes, fresh basil, and a tangy vinaigrette.",
+      "Creamy and rich tomato-based gravy with soft paneer cubes, flavored with aromatic spices and butter.",
     instructions: `
-      1. Prepare the tomatoes:
-        Slice fresh tomatoes and arrange them on a plate.
-    
-      2. Add herbs and seasoning:
-         Sprinkle chopped basil, salt, and pepper over the tomatoes.
-    
-      3. Dress the salad:
-         Drizzle with olive oil and balsamic vinegar.
-    
-      4. Serve:
-         Enjoy this simple, flavorful salad as a side dish or light meal.
-    `,
-    creator: "Sophia Green",
-    creator_email: "sophiagreen@example.com",
+    1. Marinate the paneer:
+      Marinate paneer cubes with turmeric powder and red chili powder.
+
+    2. Fry the paneer:
+      Heat oil in a pan and fry the marinated paneer cubes until golden brown.
+
+    3. Prepare the gravy:
+      In a separate pan, heat oil and fry onions, tomatoes, and cashews until a smooth paste forms.
+
+    4. Combine and simmer:
+      Add the fried paneer, tomato-cashew paste, cream, butter, and water to a pot. Simmer until the sauce thickens.
+
+    5. Garnish and serve:
+      Garnish with coriander leaves and serve hot with naan or roti.
+  `,
+    creator: "Amita Gupta",
+    creator_email: "amitagupta@example.com",
   },
 ];
 
@@ -193,7 +202,7 @@ async function initData() {
       )
    `);
 
-  for (const meal of dummyMeals) {
+  for (const meal of indianMeals) {
     stmt.run(meal);
   }
 }

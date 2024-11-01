@@ -15,7 +15,7 @@ const MainHeader = () => {
       <header className={classes.header}>
         <Link href="/" className={classes.logo}>
           <Image src={logoImg} alt="A plate with food on it" priority />
-          NextLevel Food
+          Recipe Haven
         </Link>
         <nav className={classes.nav}>
           <ul>

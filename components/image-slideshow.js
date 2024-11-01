@@ -29,7 +29,7 @@ const ImageSlideshow = () => {
       setCurrentImageIndex((prevIndex) =>
         prevIndex < images.length - 1 ? prevIndex + 1 : 0
       );
-    }, 5000);
+    }, 6000);
 
     return () => clearInterval(interval);
   }, []);
